@@ -65,7 +65,7 @@ def unkown():
                 "Sounds about right",
                 "What does that mean?",
                 "I am unable to understand. Sorry",
-                "Can you please use simplar words"][random.randrange(4)]
+                "Can you please use simplar words"][random.randrange(6)]
     
     return response
 
