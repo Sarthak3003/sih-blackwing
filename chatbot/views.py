@@ -39,7 +39,12 @@ def check_all_messages(message):
     response('Hello!', ['hello', 'hi', 'sup', 'hey', 'heyo'], single_response=True)
     response('I\'m doing fine, and you?', ['how', 'are', 'you', 'doing'], required_words=['how'])
     response('Thank you!', ['i', 'love', 'this', 'site'], required_words=['this', 'site'])
-    
+    response('''Procurement by Public organizations like- Ministries, Banks, Defense, Federal Government, State Government, Municipal Corporations, Counties etc for the benefit of public and from the public fund is know as Public Procurement.''', ['what', 'is', 'public', 'procurement'], required_words=['what', 'procurement'])
+    response('''No, you can not. If you at all wish to then you have to forfeit your EMD''', ['can', 'i', 'withdraw', 'a', 'bid'], required_words=['withdraw', 'bid'])
+    response('''BG is a mode of taking EMD. It is prefered for higher amount.''', ['what', 'is', 'BG'], required_words=['what', 'BG'])
+    response('''The bidder can’t do much. In certain cases the tendering authority allow the bidder to withdraw their bid.''', ['what', 'to', 'do', 'when', 'tender', 'is', 'BG'], required_words=['do', 'tender'])
+    response('''The delay can be on account of poor response, certain modifications/amendments in the bid terms and conditions etc.''', ['why', 'is', 'tender', 'delayed'], required_words=['why', 'tender'])
+    response('''For any query requiring urgent assistance, contact tollfree number: 1234567890, 0987654321. Email support: email.support@email.com''', ['can\'t', 'resolve', 'query', 'customer', 'care'], required_words=['customer', 'care'])
     # Navigation
     # response('')
 
@@ -55,7 +60,12 @@ def get_response(user_input):
 
 
 def unkown():
-    response = ['Could you please re-phrase that?', "...", "Sounds about right", "What does that mean?"][random.randrange(4)]
+    response = ['Could you please re-phrase that?',
+                "...",
+                "Sounds about right",
+                "What does that mean?",
+                "I am unable to understand. Sorry",
+                "Can you please use simplar words"][random.randrange(4)]
     
     return response
 
