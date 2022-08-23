@@ -4,9 +4,9 @@
          "responses": ["Hello, thanks for asking", "Good to see you again", "Hi there, how can I help?"],
          "context": [""]
         },
-        {"tag": "goodbye",
-         "patterns": ["Bye", "See you later", "Goodbye", "Nice chatting to you, bye", "Till next time"],
-         "responses": ["See you!", "Have a nice day", "Bye! Come back again soon."],
+        {"tag": "prateek",
+         "patterns": ["who is prateek", "who is kush"],
+         "responses": ["He is Randi"],
          "context": [""]
         },
         {"tag": "thanks",
@@ -203,11 +203,6 @@
       {"tag": "Weather",
          "patterns": ["what is the weather today?"],
          "responses": ["It's 36C according to accuweather"],
-         "context": [""]
-        },
-      {"tag": "leave",
-         "patterns": ["Is Michel Sharma on leave?","Is Siddhart Roy present today?","Is Shantanu Bhatt in office?"],
-         "responses": ["Give me a moment!I'll just check","yes","no"],
          "context": [""]
         },
       {"tag": "hours",
