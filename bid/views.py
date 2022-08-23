@@ -1,6 +1,7 @@
 import  re
 import json
 import random
+from socketserver import ForkingMixIn
 from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -12,6 +13,17 @@ class BestBid(APIView):
 
     def post(self, request):
         data  = json.load(request)
+
+        '''
+        bider id: something waisa
+        quantity: number of units
+        units: kg/ml/L/...
+        Preffered Brand: brand names
+        Offered Brand: brand names
+        Expected price: number
+        Offered prive: number
+        Total: pura price
+        '''
         
         return Response(
                 {
