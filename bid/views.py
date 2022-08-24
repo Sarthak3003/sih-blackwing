@@ -1,7 +1,6 @@
 import  re
 import json
 import random
-from socketserver import ForkingMixIn
 from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -13,6 +12,7 @@ class BestBid(APIView):
 
     def post(self, request):
         data  = json.load(request)
+        points = 0
 
         '''
         bider id: something waisa
@@ -24,6 +24,18 @@ class BestBid(APIView):
         Offered prive: number
         Total: pura price
         '''
+        print(data)
+        pref_model_list = []
+        off_model_list = []
+
+        for i in data['pref_model']:
+            print(i)
+            if i in off_model_list:
+                point +=1
+            # pref_model_list.append(i)
+        
+        print(pref_model_list)
+
         
         return Response(
                 {
