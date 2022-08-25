@@ -1,4 +1,3 @@
-import re
 import json
 import random
 import pickle
@@ -9,7 +8,6 @@ from nltk.stem import WordNetLemmatizer
 
 from tensorflow.keras.models import load_model
 
-from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
@@ -64,22 +62,12 @@ class ChatQuery(APIView):
     
     def post(self, request):
         data = json.load(request)
-
         query = data["query"]
         ints = predict_class(query)
         res = get_response(ints, intents)
 
-        # resp = get_response(query)
-        
         return Response(
                 {
                     "val": "Response sent",
                     "data": res
                 }, status=status.HTTP_200_OK)
-
-# while True:
-#     words = pickle.load(open('words.pkl', 'rb'))
-#     message = input("")
-#     ints = predict_class(message)
-#     res = get_response(ints, intents)
-#     print(res)
