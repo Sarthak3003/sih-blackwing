@@ -15,7 +15,6 @@ class BestBid(APIView):
     def post(self, request):
         data  = json.load(request)
         point_data = {}
-        # point = 0
 
         pref_model_list = {}
         off_model_list = {}
@@ -26,13 +25,10 @@ class BestBid(APIView):
             sl = item['sl no']
             pref_model_list[sl] = item['prefered models']
 
-        # print(pref_model_list)
-
         response = data['response']
         print("Total bids are: ", len(response))
-        # print(response)
+        
         for re in range(len(response)):
-            
             resp = response[re]
             i = 1
             k = 0
@@ -58,47 +54,8 @@ class BestBid(APIView):
         data_dict = dict(itertools.islice(data_dict.items(),3))
         print(data_dict)
 
-
-
-
-
-
-        
-
-
-
-
-        
         return Response(
                 {
                     "val": "Response sent",
                     "data": data_dict
                 }, status=status.HTTP_200_OK)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        '''
-        bider id: something waisa
-        quantity: number of units
-        units: kg/ml/L/...
-        Preffered Brand: brand names
-        Offered Brand: brand names
-        Expected price: number
-        Offered prive: number
-        Total: pura price
-        '''
