@@ -55,7 +55,7 @@ class BestBid(APIView):
 
             while i < len(expect_rate):
                 j = expect_rate[str(i+1)]
-                if j > offered_rate[str(i+1)]:
+                if j > int(offered_rate[str(i+1)]):
                     rate_point += 1
                 elif j == offered_rate[str(i+1)]:
                     rate_point += 0
