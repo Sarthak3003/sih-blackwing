@@ -20,9 +20,10 @@ class BestBid(APIView):
         requirement = data['requirement']
 
         for item in requirement:
-            sl = item['sl no']
-            pref_model_list[sl] = item['prefered models']
-            expect_rate[sl] = item['Estimated Rate']
+            sl = item['sl_no']
+            pref_model_list[sl] = item['prefered_models']
+            expect_rate[sl] = item['Estimated_Rate']
+
 
         response = data['response']
         print("Total bids are: ", len(response))
@@ -30,16 +31,19 @@ class BestBid(APIView):
         for re in range(len(response)):
             resp = response[re]
             i = 1
+            co = 1
             mod_point = 0
             rate_point = 0
-            id = resp['bidder id']
+            id = resp['bidder_id']
 
             #### Prefered and Offered Models Point Scheme
 
-            for item in resp['bidder offer']:
-                sl = item['sl no']
-                off_model_list[sl] = item['offered models']
-                offered_rate[sl] = item['unit rate']
+            for item in resp['bidder_offer']:
+                sl = str(co)
+                off_model_list[sl] = item['offered_models']
+                offered_rate[sl] = item['unit_rate']
+                co = int(sl)
+                co += 1
 
             while i <= len(pref_model_list):
                 for j in pref_model_list[str(i)]:
