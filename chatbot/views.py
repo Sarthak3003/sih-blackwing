@@ -15,7 +15,7 @@ from rest_framework import status
 ############# chatbot-neural network
 
 lemmatizer = WordNetLemmatizer()
-intents = json.loads(open('intents.json').read())
+intents = json.loads(open('intents.json', encoding="utf8").read())
 
 
 classes = pickle.load(open('classes.pkl', 'rb'))
